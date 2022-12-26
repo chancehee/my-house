@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.home.model.dao.BoardDao">
+
+	<select id="select" resultType="com.ssafy.home.model.dto.BoardDto">
+		select * from boards
+		order by regtime desc
+	</select>
+	
+	<insert id="insert" parameterType="hashMap">
+		insert into boards 
+		values(null, #{user_id}, #{title}, #{text}, hit, now());
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete from boards
+		where article_no = #{article_no} 
+	</delete>
+	
+	<select id="get" parameterType="int" resultType="BoardDto">
+		select * from boards
+		where article_no = #{article_no}
+	</select>
+	
+	<update id="modify" parameterType="boardDto">
+		update boards
+		set title = #{title}, text = #{text}
+		where article_no = #{article_no}
+	</update>
+	
+</mapper>

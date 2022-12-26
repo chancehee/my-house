@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.home.model.dao.CommentDao">
+
+	<!-- 게시글 번호에 해당하는 댓글 조회  -->
+	<select id="select" parameterType="Integer" resultType="CommentDto">
+		select * from memos
+		where article_no = #{article_no}
+		order by memotime 
+	</select>
+	
+	<!-- 게시글 번호에 해당하는 댓글 등록  -->
+	<insert id="insert" parameterType="CommentDto">
+		insert into memos(
+			user_id, comment, memotime, article_no
+		) values (
+			#{user_id}, #{comment}, now(), #{article_no} 
+		)
+	</insert>
+	
+	<update id="modify" parameterType="CommentDto">
+		<![CDATA[
+		update memos
+		set comment = #{comment}
+		where memo_no = #{memo_no}
+		]]>
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from memos
+		where memo_no = #{memo_no}
+	</delete>
+	
+	<delete id="deleteComments" parameterType="Integer">
+		delete from memos
+		where article_no = #{article_no}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.home.model.dao.NoticeDao">
+
+	<select id="select" parameterType="String" resultType="com.ssafy.home.model.dto.NoticeDto">
+		select * from notices
+		order by join_date desc
+	</select>
+	
+	<insert id="insert" parameterType="hashMap">
+		insert into notices 
+		values(null, #{user_id}, #{title}, #{text}, now());
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete from notices
+		where num = #{num} 
+	</delete>
+	
+	<update id="modify" parameterType="hashMap">
+		update notices 
+		set title = #{title}, text = #{text}
+		where num = #{num}
+	</update>
+	
+	<select id="get" parameterType="int" resultType="NoticeDto">
+		select * from notices
+		where num = #{num}
+	</select>
+	
+	
+	
+</mapper>

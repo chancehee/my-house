@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.home.model.dao.MemberDao">
+	
+	<select id="login" parameterType="memberDto" resultType="memberDto">
+		select username, userid, email
+		from members
+		where userid = #{userid} and userpwd = #{userpwd}
+	</select>
+	
+	<insert id="join" parameterType="memberDto">
+        insert into members (username, userid, userpwd, email, joindate, salt)
+        values (#{username}, #{userid}, #{userpwd}, #{email}, now(), #{salt})
+	</insert>
+	
+	<update id="modify" parameterType="memberDto">
+        update members
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userpwd != null">userpwd = #{userpwd},</if>
+        </trim>
+        where userid = #{userid}
+	</update>
+	
+	<delete id="delete" parameterType="memberDto">
+		delete from members
+		where userid = #{userid}
+	</delete>
+	
+	<select id="userInfo" parameterType="string" resultType="memberDto">
+		select *
+		from members
+		where userid = #{userid}
+	</select>
+	
+	<select id="getRefreshToken" parameterType="string" resultType="string">
+		select token
+		from members
+		where userid = #{userid}
+	</select>
+	
+	<update id="saveRefreshToken" parameterType="map">
+		update members
+		set token = #{token}
+		where userid = #{userid}
+	</update>
+	
+	<update id="deleteRefreshToken" parameterType="map">
+		update members
+		set token = #{token, jdbcType=VARCHAR}
+		where userid = #{userid}
+	</update>
+	
+</mapper>

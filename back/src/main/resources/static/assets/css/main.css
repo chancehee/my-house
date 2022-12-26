@@ -1,0 +1,22 @@
+.accordion-body:hover {
+  background-color: powderblue;
+  cursor: pointer;
+}
+
+#header {
+	margin-bottom: 100px;
+}
+
+
+
+.nav-link:hover{
+	background-color: orange;
+	border-radius:3px;
+}
+
+#about {
+	margin-top: 100px;
+	margin-left: 5px;
+	margin-right: 5px; 
+}
+
