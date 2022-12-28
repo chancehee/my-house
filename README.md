@@ -32,6 +32,10 @@
 <img width="904" alt="스크린샷 2022-11-24 오후 8 15 04" src="https://user-images.githubusercontent.com/59447235/203771236-f7377d96-a946-4852-be4b-e25640228221.png">  
 <img width="891" alt="스크린샷 2022-11-24 오후 8 14 52" src="https://user-images.githubusercontent.com/59447235/203771314-90535595-54d1-4f71-b189-b24d610511ba.png">  
 
+# 시연 영상  
+https://youtu.be/WH2NNU3-eeI  
+
+
 
 
 
