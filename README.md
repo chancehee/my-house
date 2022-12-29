@@ -27,6 +27,15 @@
 # 유스케이스  
 ![유스케이스](https://user-images.githubusercontent.com/59447235/203769109-6f6edfeb-416b-4911-907a-d68a41380c4d.png)    
 
+# 팀 구성  
+2인 1조  
+이찬희 : KakaoMap API를 활용한 지도, 공공데이터 API를 활용한 REST API 설계, 게시판 기능 구현   
+선혜주 : JWT Token 기반 로그인 기능 구현, 게시판 기능 구현  
+
+# 개발 기간  
+2022.11.17 ~ 2022.11.24  
+
+
 # 상세 화면  
 <img width="879" alt="스크린샷 2022-11-24 오후 8 14 40" src="https://user-images.githubusercontent.com/59447235/203771168-d984bccb-1ac9-4dfd-b370-c3e3b5e2f94b.png">  
 <img width="904" alt="스크린샷 2022-11-24 오후 8 15 04" src="https://user-images.githubusercontent.com/59447235/203771236-f7377d96-a946-4852-be4b-e25640228221.png">  
